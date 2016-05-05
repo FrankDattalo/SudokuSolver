@@ -1,0 +1,24 @@
+inner table,td,tr {
+	padding: 20px;
+	height: 10px;
+	font-family: "Courier New", Times, serif;
+}
+
+.inner td:hover {
+	background-color: #f5f5f5;
+}
+
+.outer {
+	padding: 5px;
+	border: 1px solid #ddd;
+}
+
+.none {
+	padding: 0px;
+	border: none;
+}
+
+.main {
+	text-align: center;
+	font-family: "Courier New", Times, serif;
+}

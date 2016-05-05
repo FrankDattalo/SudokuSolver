@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html ng-app="SodukuSolver">
+<head>
+	<title>Soduku Solver!</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body ng-controller="MainController as main" class="main">
+	<h2>Welcome to my Sodoku Solver!</h2>
+	<p>Click each square to change the value of that square, and then click Solve.</p>
+	<p>If the board is invalid, the program will chose not to solve it.</p>
+	<p>If multiple solutions exist for the same board, the program will chose the fastest one.</p>
+	<button ng-click="main.go()">Solve</button>
+	<button ng-click="main.resetBoard()">Reset</button>
+	<p>{{ main.log }}</p>
+	<table class="none" align="center">
+		<tr data-ng-repeat="xOuter in main.range">
+			<td data-ng-repeat="yOuter in main.range" class="outer">
+				<table class="inner">
+					<tr data-ng-repeat="xInner in main.range">
+						<td data-ng-repeat="yInner in main.range" ng-click="main.incrementCell([3 * xOuter + xInner, 3 * yOuter + yInner]);">
+							{{ main.displayCell([3 * xOuter + xInner, 3 * yOuter + yInner]); }}
+						</td>
+					</tr>
+				</table>
+			</td>
+		<tr>
+	</table>
+</body>
+</html>
